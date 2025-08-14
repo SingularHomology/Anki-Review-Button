@@ -1,0 +1,8 @@
+{
+    "name": "Review Button",
+    "version": "0.1",
+    "description": "Adds a Review button that's adjacent to the 'Study Now' button in each deck's overview page to quickly schedule a custom study session with decks marked as 'Learning' and 'To review'.",
+    "author": "Oussama Moutaoikil",
+    "homepage": "https://github.com/singularhomology/anki-review-button",
+    "min_anki_version": "2.1.41"
+}

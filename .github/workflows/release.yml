@@ -1,0 +1,25 @@
+name: Build and Release Anki Add-on
+
+on:
+  push:
+    tags:
+      - "v*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Create .ankiaddon file
+        run: |
+          cd src
+          zip -r ../Review-Button.ankiaddon ./*
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: Review-Button.ankiaddon
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
